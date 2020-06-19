@@ -27,7 +27,6 @@ $opts = db_query_fetch_all('SELECT * FROM categories ORDER BY title');
 form_input_text('Title', $challenge['title']);
 form_textarea('Description', $challenge['description']);
 form_input_text('Flag', $challenge['flag']);
-message_inline('This should be flag SHA256 hash of the flag, not the plaintext!', "yellow");
 form_select($opts, 'Category', 'id', isset ($challenge)?$challenge['category']:$_GET['category'], 'title');
 form_input_checkbox('Exposed', $challenge['exposed']);
 form_hidden('action', isset ($challenge)?'edit':'new');
@@ -43,7 +42,6 @@ section_subhead ("Advanced Settings:");
 form_input_text('Initial Points', $challenge['initial_points'], null, "Initial Points");
 form_input_text('Minimum Points', $challenge['minimum_points'], null, "Minimum Points");
 form_input_text('Solve Decay', $challenge['solve_decay'], null, "Number of solves needed to reach min. points");
-
 $opts = db_query_fetch_all('
     SELECT
        ch.id,
@@ -61,7 +59,8 @@ form_input_text('Available from', date_time($challenge['available_from']), null,
 form_input_text('Available until', date_time($challenge['available_until']), null, "Available until");
 
 form_input_checkbox('Automark', $challenge['automark']);
-form_input_checkbox('Case insensitive (deprecated due to hashing)', $challenge['case_insensitive']);
+form_input_checkbox('Case insensitive', $challenge['case_insensitive']);
+message_inline ('Deprecated due to hashing', "yellow");
 form_input_text('Num attempts allowed', $challenge['num_attempts_allowed'], null, "Max attempts allowed (0 for unlimited)");
 form_input_text('Min seconds between submissions', $challenge['min_seconds_between_submissions'], null, "Submission cooldown (in seconds)");
 form_hidden('id', $_GET['id']);
