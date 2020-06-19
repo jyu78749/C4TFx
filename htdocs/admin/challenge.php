@@ -26,7 +26,8 @@ $opts = db_query_fetch_all('SELECT * FROM categories ORDER BY title');
 
 form_input_text('Title', $challenge['title']);
 form_textarea('Description', $challenge['description']);
-form_input_text('Flag sha256 Hash', $challenge['flag']);
+form_input_text('Flag', $challenge['flag']);
+message_inline('This should be flag SHA256 hash of the flag, not the plaintext!', "yellow");
 form_select($opts, 'Category', 'id', isset ($challenge)?$challenge['category']:$_GET['category'], 'title');
 form_input_checkbox('Exposed', $challenge['exposed']);
 form_hidden('action', isset ($challenge)?'edit':'new');
