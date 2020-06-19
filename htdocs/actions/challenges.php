@@ -110,19 +110,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             // lots of people submit with trailing whitespace..
             // we probably never want automarked keys with whitespace
             // at beginning or end, so trimming is probably fine.
-
+			// Trimming has been edited to only be on user input before hashing
+			// Also removed the case sensitivity check since hash makes it sensitive
+			// Also this currently only uses sha256
             $_POST['flag'] = trim($_POST['flag']);
-            $challenge['flag'] = trim($challenge['flag']);
-
-            if ($challenge['case_insensitive']) {
-                if (strcasecmp($_POST['flag'], $challenge['flag']) === 0) {
-                    $correct = true;
-                }
-            } else {
-                if (strcmp($_POST['flag'], $challenge['flag']) === 0) {
-                    $correct = true;
-                }
+            if (strcmp(hash('sha256', $_POST['flag']), $challenge['flag']) === 0) {
+                $correct = true;
             }
+            
         }
 
         if ($correct)
