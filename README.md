@@ -1,38 +1,7 @@
-CTFx
+CCCTFx
 =========
 
-CTFx is a CTF Platform forked from [mellivora](https://github.com/Nakiami/mellivora), that focuses on low memory footprint and low server CPU usage. It has a futuristic interface that's optimized for slower hardware, meaning that there is no bulky Javascript running in the background, nor length CSS stylesheets. CTFx improves on the mellivora CTF engine by the UI redesign and the addition of new features.
-
-<p align="center">
-  <img src="readme-img/home.png" width="640" alt="CTFx home"/>
-</p>
-
-## Features
-- Unlimited categories and challenges with configurable dynamic/static scoring
-- Challenge hints
-- Set custom start and end times for any challenge or category
-- Unlockable challenges (In order to see them requires you to solve another challenge (from any category you choose))
-- Local or [Amazon S3](https://aws.amazon.com/s3/) challenge file upload
-- Admin Panel with competition overview, IP logging, user/email search, exception log (that includes the users that caused them)
-- Create/edit front page news
-- Arbitrary menu items and internal pages
-- BBCode Support for challenge and category descriptions, news, etc ...
-- Optional solve count limit per challenge
-- [reCAPTCHA](https://www.google.com/recaptcha/) support
-- User-defined or auto-generated passwords on signup
-- Configurable caching
-- Caching proxy (like [Cloudflare](https://www.cloudflare.com/)) aware (optional x-forwarded-for trust)
-- [Segment](https://segment.com/) analytics support
-- SMTP email support. Bulk or single email composition
-- TOTP two factor auth support
-- [CTF Time](https://ctftime.org/) compatible JSON scoreboard
-- And more ...
-
-## Looks
-CTFx has a slick modern interface. See the [gallery](gallery.md).
-
-## Performance
-CTFx is extremely lightweight and fast. See the [benchmarks](benchmarks.md).
+CCCTFx is a fork of the CTFx platform by Milkdrop, built specifically for the Callipygian Consortium of Cryptography and its varying needs to run a high school CTF. CCCTFx utilizes CTFx's speed, low footprint, and features, and extends security by hashing flags to prevent server leaks, as well as plans implement individual accounts similar to CTFd.
 
 ## Installation
 **- Install the following dependencies**
@@ -70,4 +39,5 @@ CTFx is extremely lightweight and fast. See the [benchmarks](benchmarks.md).
 - You might want to change the `MELLIVORA_CONFIG_CTF_START_TIME` and `MELLIVORA_CONFIG_CTF_END_TIME` variables in `include/config/config.inc.php`, so that each new challenge you create will have these times set as default.
 
 ## License
+This framework is a fork of CTFx, which is a fork of Mellivora, and inherits the GPLv3 license through copyleft.
 This software is licenced under the [GNU General Public License v3 (GPL-3)](http://www.tldrlegal.com/license/gnu-general-public-license-v3-%28gpl-3%29). The "include/thirdparty/" directory contains third party code. Please read their LICENSE files for information on the software availability and distribution.
