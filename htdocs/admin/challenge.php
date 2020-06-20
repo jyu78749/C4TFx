@@ -42,7 +42,6 @@ section_subhead ("Advanced Settings:");
 form_input_text('Initial Points', $challenge['initial_points'], null, "Initial Points");
 form_input_text('Minimum Points', $challenge['minimum_points'], null, "Minimum Points");
 form_input_text('Solve Decay', $challenge['solve_decay'], null, "Number of solves needed to reach min. points");
-
 $opts = db_query_fetch_all('
     SELECT
        ch.id,
@@ -61,6 +60,7 @@ form_input_text('Available until', date_time($challenge['available_until']), nul
 
 form_input_checkbox('Automark', $challenge['automark']);
 form_input_checkbox('Case insensitive', $challenge['case_insensitive']);
+message_inline ('Deprecated due to hashing', "yellow");
 form_input_text('Num attempts allowed', $challenge['num_attempts_allowed'], null, "Max attempts allowed (0 for unlimited)");
 form_input_text('Min seconds between submissions', $challenge['min_seconds_between_submissions'], null, "Submission cooldown (in seconds)");
 form_hidden('id', $_GET['id']);
