@@ -1,9 +1,11 @@
 CCCTFx
 =========
 
-CCCTFx is a fork of the CTFx platform by Milkdrop, built specifically for the Callipygian Consortium of Cryptography and its varying needs to run a high school CTF. CCCTFx utilizes CTFx's speed, low footprint, and features, and extends security by hashing flags to prevent server leaks, as well as plans implement individual accounts similar to CTFd.
+CCCTFx is a fork of the CTFx platform by Milkdrop, built specifically for the Callipygian Consortium of Cryptography and its varying needs to run a high school CTF. CCCTFx utilizes CTFx's speed, low footprint, and features, and extends security by hashing flags to prevent server leaks, as well as possibly implementing individual accounts similar to CTFd.
 
 ## Installation
+Run quickinstall.sh or do the following:
+
 **- Install the following dependencies**
   - `nginx php-fpm php-xml php-curl php-mysql php-mbstring php-pear composer mysql-server`
 
