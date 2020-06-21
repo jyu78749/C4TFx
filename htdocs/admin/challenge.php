@@ -59,8 +59,8 @@ form_input_text('Available from', date_time($challenge['available_from']), null,
 form_input_text('Available until', date_time($challenge['available_until']), null, "Available until");
 
 form_input_checkbox('Automark', $challenge['automark']);
-form_input_checkbox('Case insensitive', $challenge['case_insensitive']);
-message_inline ('Deprecated due to hashing', "yellow");
+message_inline('Warning: case insensitivity has been deprecated due to hashing. Case is always sensitive, this box is currently here to maintain compatibility', "red");
+form_input_checkbox('Case insensitive', $challenge['case_insensitive']); //TODO: Remove this
 form_input_text('Num attempts allowed', $challenge['num_attempts_allowed'], null, "Max attempts allowed (0 for unlimited)");
 form_input_text('Min seconds between submissions', $challenge['min_seconds_between_submissions'], null, "Submission cooldown (in seconds)");
 form_hidden('id', $_GET['id']);
