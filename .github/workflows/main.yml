@@ -1,0 +1,10 @@
+on: [push]
+
+jobs:
+  build_job:
+    runs-on: ubuntu-latest
+    name: CCCTFx automated Docker build
+    steps:
+    - name: Build image
+      id: build
+      uses: jyu78749/CCCTFx@v1

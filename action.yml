@@ -1,0 +1,5 @@
+name: 'CCCTFx'
+description: 'Build Docker image of latest source'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
