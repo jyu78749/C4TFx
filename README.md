@@ -5,7 +5,7 @@ CCCTFx is a fork of the CTFx platform by Milkdrop, built specifically for the Ca
   - Security: hashing flags to prevent server leaks
 
 ## Installation
-Run quickinstall.sh or do the following:
+Run quickinstall.sh, `docker build . --file Dockerfile --tag ccctfx-latest`, or do the following:
 
 **- Install the following dependencies**
   - `nginx php-fpm php-xml php-curl php-mysql php-mbstring php-pear composer mysql-server`
