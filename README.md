@@ -1,11 +1,10 @@
-CCCTFx
+C4TFx
 =========
 
-CCCTFx is a fork of the CTFx platform by Milkdrop, built specifically for the Callipygian Consortium of Cryptography and its varying needs to run a high school CTF. CCCTFx utilizes CTFx's speed, low footprint, and features, and utilizes the following additions:
-  - Security: hashing flags to prevent server leaks
+CCCCTFx (C4TFx) is a fork of the CTFx platform by Milkdrop, built specifically for the Callipygian Consortium of Cryptography and its varying needs to run a high school CTF. CCCTFx utilizes CTFx's speed, low footprint, and features, and builds additional features on top.
 
 ## Installation
-Run quickinstall.sh, `docker build . --file Dockerfile --tag ccctfx-latest`, or do the following:
+Run quickinstall.sh and follow instructions, `docker build . --file Dockerfile --tag ccctfx-latest` (note that this uses MariaDB which is compatible with MySQL), or do the following:
 
 **- Install the following dependencies**
   - `nginx php-fpm php-xml php-curl php-mysql php-mbstring php-pear composer mysql-server`
