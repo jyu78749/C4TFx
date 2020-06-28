@@ -111,7 +111,7 @@ function foot () {
 </div> <!-- /container -->
 
 <div id="footer">
-    Powered by CCCTFx, a fork of <a href="https://gitlab.com/Milkdrop/ctfx">CTFx</a> by <a href="https://gitlab.com/Milkdrop">Milkdrop</a>
+    Powered by C4TFx, a fork of <a href="https://gitlab.com/Milkdrop/ctfx">CTFx</a> by <a href="https://gitlab.com/Milkdrop">Milkdrop</a>
 </div>
 
 </div> <!-- /page -->
