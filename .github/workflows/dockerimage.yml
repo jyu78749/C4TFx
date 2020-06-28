@@ -7,11 +7,11 @@ jobs:
     steps:
         - uses: actions/checkout@v1
         - name: Build the Docker image
-          run: docker build . --file Dockerfile --tag jyu78749/ccctfx:latest
+          run: docker build . --file Dockerfile --tag c4tfx:latest
         - name: Save the Docker image
-          run: docker save -o ccctfx-latest.tar jyu78749/ccctfx:latest
+          run: docker save -o c4tfx-latest.tar c4tfx:latest
         - name: Upload tar to artifact
           uses: actions/upload-artifact@v1
           with:
             name: Docker Image
-            path: ccctfx-latest.tar
+            path: c4tfx-latest.tar
