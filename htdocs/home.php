@@ -49,8 +49,8 @@ if (cache_start(CONST_CACHE_NAME_HOME, Config::get('MELLIVORA_CONFIG_CACHE_TIME_
             <div class="ctfx-card-body">
                 ',get_bbcode()->parse($item['body']),'
             </div>
-        </div>'; */
-    }
+        </div>';
+    }*/
 
     echo '</div></div>';
     cache_end (CONST_CACHE_NAME_HOME);
