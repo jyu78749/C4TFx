@@ -52,7 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $challenge = db_select_one(
                 'challenges',
                 array(
-                    'solves'
+                    'solves',
+					'flag'
                 ),
                 array(
                     'id' => $_POST['id']
