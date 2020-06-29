@@ -1,0 +1,17 @@
+name: Docker Image CI
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+        - uses: actions/checkout@v1
+        - name: Build the Docker image
+          run: docker build . --file Dockerfile --tag c4tfx:latest
+        - name: Save the Docker image
+          run: docker save -o c4tfx-latest.tar c4tfx:latest
+        - name: Upload tar to artifact
+          uses: actions/upload-artifact@v1
+          with:
+            name: Docker Image
+            path: c4tfx-latest.tar

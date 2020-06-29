@@ -12,13 +12,13 @@ if (cache_start(CONST_CACHE_NAME_HOME, Config::get('MELLIVORA_CONFIG_CACHE_TIME_
 
     echo '<div id="home-logo"></div>
         <div class="home-intro-text">
-        Welcome to CTFx. This is a fork of <a href="https://github.com/Nakiami/mellivora">mellivora</a> that sports an overhaul of the UI, extra functionality (such as dynamic scoring) and various other quality-of-life tweaks. The goal of CTFx is to bring together the speed of mellivora and the appearance of modern and future web in order to create a fast, lightweight and enjoyable CTF Platform. The current CTFx repository is a close clone of the CTFx instance that is running at the official X-MAS CTF.
+        Welcome to CCCCTF (aka C4TF) 2020! Add more text
     </div>';
 
     echo '<div class="row">
     <div class="col-md-6">';
 
-    echo '<iframe src="https://discordapp.com/widget?id=519974854485737483&theme=dark" width="100%" height="240" allowtransparency="true" frameborder="0"></iframe>';
+    //echo '<iframe src="https://discordapp.com/widget?id=519974854485737483&theme=dark" width="100%" height="240" allowtransparency="true" frameborder="0"></iframe>';
 
     section_head ("Rules");
     
@@ -31,15 +31,15 @@ if (cache_start(CONST_CACHE_NAME_HOME, Config::get('MELLIVORA_CONFIG_CACHE_TIME_
     echo '</div>
     <div class="col-md-6">';
 
-    section_head ("Latest News");
+    //section_head ("Latest News");
 
-    $news = db_query_fetch_all('SELECT * FROM news ORDER BY added DESC');
+    //$news = db_query_fetch_all('SELECT * FROM news ORDER BY added DESC');
 
-    if (count ($news) == 0) {
-    	message_inline ("No news");
-    }
+    //if (count ($news) == 0) {
+    //	message_inline ("No news");
+    //}
 
-    foreach ($news as $item) {
+/*     foreach ($news as $item) {
         echo '<div class="ctfx-card">
             <div class="ctfx-card-head"><h4>',
                 htmlspecialchars($item['title']),
@@ -50,7 +50,7 @@ if (cache_start(CONST_CACHE_NAME_HOME, Config::get('MELLIVORA_CONFIG_CACHE_TIME_
                 ',get_bbcode()->parse($item['body']),'
             </div>
         </div>';
-    }
+    }*/
 
     echo '</div></div>';
     cache_end (CONST_CACHE_NAME_HOME);

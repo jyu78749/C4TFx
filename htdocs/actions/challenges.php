@@ -113,8 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 			// Trimming has been edited to only be on user input before hashing
 			// Also removed the case sensitivity check since hash makes it sensitive
 			// Also this currently only uses sha256
-            $_POST['flag'] = trim($_POST['flag']);
-            if (strcmp(hash('sha256', $_POST['flag']), $challenge['flag']) === 0) {
+            if (strcmp(hash('sha256', trim($_POST['flag'])), $challenge['flag']) === 0) {
                 $correct = true;
             }
             

@@ -111,8 +111,7 @@ function foot () {
 </div> <!-- /container -->
 
 <div id="footer">
-    <b>CTFx</b> v1.1<br>
-	Made with &#x1f499; by <a href="https://gitlab.com/Milkdrop">Milkdrop</a>, Based on <a href="https://github.com/Nakiami/mellivora">mellivora</a>
+    Powered by C4TFx, a fork of <a href="https://gitlab.com/Milkdrop/ctfx">CTFx</a> by <a href="https://gitlab.com/Milkdrop">Milkdrop</a>
 </div>
 
 </div> <!-- /page -->

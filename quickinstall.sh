@@ -7,8 +7,9 @@ sudo mysql_secure_installation
 sudo cp -r ../CCCTFx/ /var/www/ctfx/
 cd /var/www/ctfx
 composer install --no-dev --optimize-autoloader
-sudo chmod -R go+w writable/
+sudo chmod -R 777 writable/
 sudo cp install/recommended_nginx_config /etc/nginx/nginx.conf
+sudo sed -i 's/phpVERSION.HERE-fpm/'$(ls /etc/init.d/ | grep php)'/g' /etc/nginx/nginx.conf
 sudo mysql < install/sql/000-db.sql
 sudo mysql < install/sql/001-mellivora.sql
 sudo mysql < install/sql/002-countries.sql

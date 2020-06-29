@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 'initial_points' => $initialPts,
                 'minimum_points' => $minPts,
                 'solve_decay' => $decay,
-                'flag' => hash('sha256', $_POST['flag']),
+                'flag' => hash('sha256', trim($_POST['flag'])),
                 'category' => $_POST['category'],
                 'exposed' => $_POST['exposed']
             )
@@ -52,19 +52,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $challenge = db_select_one(
                 'challenges',
                 array(
-                    'solves'
+                    'solves',
+					'flag'
                 ),
                 array(
                     'id' => $_POST['id']
                 )
             );
+			
+			if ($_POST['flag'] !== $challenge['flag']) {
+				$flag = hash('sha256', trim($_POST['flag']));
+			}
 
            db_update(
                 'challenges',
                 array(
                     'title'=>$_POST['title'],
                     'description'=>$_POST['description'],
-                    'flag'=>hash('sha256', $_POST['flag']),
+                    'flag'=>$flag,
                     'automark'=>$_POST['automark'],
                     'case_insensitive'=>$_POST['case_insensitive'],
                     'points' => dynamicScoringFormula ($_POST['initial_points'], $_POST['minimum_points'], $_POST['solve_decay'], $challenge['solves']),
